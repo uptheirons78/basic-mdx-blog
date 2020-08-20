@@ -4,6 +4,7 @@ import {
   FooterWrapper,
   FooterSocialWrapper,
   FooterSocialIcons,
+  P,
 } from "../elements";
 
 export const Footer = () => {
@@ -57,7 +58,9 @@ export const Footer = () => {
             <img src={data.pinterest.publicURL} alt="Pinterest Logo" />
           </a>
         </FooterSocialIcons>
-        <p>&copy; 2020 Company. All Rights Reserved.</p>
+        <P size="xSmall" color="dark3">
+          &copy; 2020 Company. All Rights Reserved.
+        </P>
       </FooterSocialWrapper>
     </FooterWrapper>
   );
