@@ -1,8 +1,12 @@
 import React from "react";
-import { Container } from "../components";
+import { Container, FeaturedImage } from "../components";
 
 const IndexPage = () => {
-  return <Container></Container>;
+  return (
+    <Container>
+      <FeaturedImage />
+    </Container>
+  );
 };
 
 export default IndexPage;
