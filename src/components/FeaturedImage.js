@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { FeaturedImageWrapper } from "../elements";
 
-export const FeaturedImage = ({ fixed }) => {
+export const FeaturedImage = ({ fluid }) => {
   const data = useStaticQuery(graphql`
     query {
       imageSharp(fluid: { originalName: { eq: "office.jpg" } }) {
@@ -16,7 +16,7 @@ export const FeaturedImage = ({ fixed }) => {
   return (
     <FeaturedImageWrapper>
       <Img
-        fixed={fixed ? fixed : data.imageSharp.fluid}
+        fluid={fluid ? fluid : data.imageSharp.fluid}
         style={{
           position: "absolute",
           top: 0,
