@@ -1,6 +1,5 @@
-/*
 exports.createPages = async function ({ actions, graphql }) {
-  const { data } = await graphql`
+  const { data } = await graphql(`
     query {
       allMdx(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
@@ -13,14 +12,14 @@ exports.createPages = async function ({ actions, graphql }) {
         }
       }
     }
-  `;
+  `);
 
   // Create paginated pages for posts
   const postsPerPage = 3;
   const numPages = Math.ceil(data.allMdx.edges.length / postsPerPage);
 
   Array.from({ length: numPages }).forEach((_, i) => {
-    actions.createPages({
+    actions.createPage({
       path: i === 0 ? `/` : `${i + 1}`,
       component: require.resolve("./src/templates/allPosts.js"),
       context: {
@@ -33,6 +32,7 @@ exports.createPages = async function ({ actions, graphql }) {
   });
 
   // Create Single Blog Post
+  /*
   data.allMdx.edges.forEach(edge => {
     const slug = edge.node.frontmatter.slug;
     const id = edge.node.id;
@@ -43,6 +43,5 @@ exports.createPages = async function ({ actions, graphql }) {
       context: { id },
     });
   });
+  */
 };
-
-*/
